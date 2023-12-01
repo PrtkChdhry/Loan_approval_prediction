@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background: url('https://media.istockphoto.com/id/1145371340/photo/partner-has-made-a-fraud-in-the-contract-of-sale-and-being-handed-a-cash-and-pen-to-the.jpg?s=612x612&w=0&k=20&c=gEL2GiGxVAWIg6zd73afHWjVE37cNEBww49DE45jwiI=') center/cover no-repeat fixed;
+        position: relative;
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Adjust the alpha (last parameter) for darkness */
+        z-index: -1; /* Ensure the overlay is behind other content */
+    }
+
+    h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
+        color: whitesmoke; /* Set the heading color to normal shade */
+        margin-bottom: 30px;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0 5px;
+        color: #555;
+        font-weight: bold;
+    }
+
+    input {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input[type="submit"] {
+        background-color: #3498db;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #2980b9;
+    }
+
+    h3 {
+        margin-top: 20px;
+        color: #3498db;
+        font-size: 20px;
+    }
+
+    .loan-images {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+
+    .loan-images img {
+        max-width: 150px;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Loan Approval Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="no_of_dependents">Number of Dependents:</label>
+        <input type="number" name="no_of_dependents" required>
+
+        <label for="education">Education:</label>
+        <select name="education" required>
+            <option value="0">Graduate</option>
+            <option value="1">Not Graduate</option>
+        </select><br>
+
+        <label for="self_employed">Self Employed:</label>
+        <select name="self_employed" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label for="income_annum">Annual Income:</label>
+        <input type="number" name="income_annum" required>
+
+        <label for="loan_amount">Loan Amount:</label>
+        <input type="number" name="loan_amount" required>
+
+        <label for="loan_term">Loan Term (in months):</label>
+        <input type="number" name="loan_term" required>
+
+        <label for="cibil_score">CIBIL Score:</label>
+        <input type="number" name="cibil_score" required>
+
+        <label for="residential_assets_value">Residential Assets Value:</label>
+        <input type="number" name="residential_assets_value" required>
+
+        <label for="commercial_assets_value">Commercial Assets Value:</label>
+        <input type="number" name="commercial_assets_value" required>
+
+        <label for="luxury_assets_value">Luxury Assets Value:</label>
+        <input type="number" name="luxury_assets_value" required>
+
+        <label for="bank_asset_value">Bank Asset Value:</label>
+        <input type="number" name="bank_asset_value" required>
+
+        <input type="submit" value="Predict">
+    </form>
+    
+</body>
+</html>
